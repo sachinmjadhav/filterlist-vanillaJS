@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <title>Filter List Vanilla JS</title>
+</head>
+
+<body>
+
+  <header class="bg-dark header text-white text-center p-2">
+    <h1>Filter List</h1>
+  </header>
+
+  <div class="container mt-5">
+    <input type="text" id="searchtxt" class="form-control form-control-lg" placeholder="Search Names...">
+
+    <ul class="list-group mt-2 list">
+      <li class="list-group-item items">
+        <a id="name" href="#">Abhishek</a>
+      </li>
+      <li class="list-group-item items">
+        <a id="name" href="#">Anup</a>
+      </li>
+      <li class="list-group-item items">
+        <a id="name" href="#">Anurag</a>
+      </li>
+      <li class="list-group-item items">
+        <a id="name" href="#">Binny</a>
+      </li>
+      <li class="list-group-item items">
+        <a id="name" href="#">Bindu</a>
+      </li>
+      <li class="list-group-item items">
+        <a id="name" href="#">Chetan</a>
+      </li>
+      <li class="list-group-item items">
+        <a id="name" href="#">Christopher</a>
+      </li>
+      <li class="list-group-item items">
+        <a id="name" href="#">Danish</a>
+      </li>
+      <li class="list-group-item items">
+        <a id="name" href="#">David</a>
+      </li>
+      <li class="list-group-item items">
+        <a id="name" href="#">Ganesh</a>
+      </li>
+      <li class="list-group-item items">
+        <a id="name" href="#">Hari</a>
+      </li>
+      <li class="list-group-item items">
+        <a id="name" href="#">Kiran</a>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    const list = document.querySelector('.list');
+    const searchtxt = document.querySelector('#searchtxt');
+    const items = document.querySelector('.items');
+
+    searchtxt.addEventListener('keyup', () => {
+      let inputVal = searchtxt.value.toLowerCase();
+
+      let li = document.querySelectorAll('.items');
+      let names = document.querySelectorAll('#name');
+
+      for (i = 0; i < li.length; i++) {
+        let a = li[i].getElementsByTagName('a')[0];
+        if (a.innerHTML.toLowerCase().indexOf(inputVal) > -1) {
+          li[i].style.display = '';
+        } else {
+          li[i].style.display = 'none';
+        }
+      }
+
+    });
+  </script>
+
+
+</body>
+
+</html>
